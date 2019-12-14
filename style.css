@@ -1,0 +1,146 @@
+body {
+  margin:0;
+  background-color: #212121;
+  height: 100%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+p {
+  font-size:0.7rem;
+}
+.showcase::after {
+  content: '';
+  height:100vh;
+  width: 100%;
+  background-image: url("a.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  filter:blur(8px);
+  transition: 1s;
+}
+.showcase:hover::after {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+.showcase:hover .blur{
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+.showcase:hover .text{
+  font-size: 1.5rem;
+}
+.blur {
+  transition: 1s;
+}
+.content {
+position: absolute;
+z-index: 1;
+top: 25%;
+text-align: center;
+
+width: 100%;
+}
+.logo {
+  max-width:180px;
+}
+.title {
+  font-family: 'Courier Prime', monospace;
+  font-size: 2rem;
+  margin-top: 0.2vh;
+}
+.text{
+  transition: 1s;
+  font-size: 0.8rem;
+}
+/*about*/
+
+.about {
+  display: grid;
+  padding-top: 100px;
+  grid-template-columns: repeat(3,1fr);
+  padding-bottom: 20vh;
+}
+.about h2 {
+  font-size:1rem;
+}
+.web-dev{
+  margin: 0 auto;
+  text-align: center;
+}
+.brand {
+  margin: 0 auto;
+  text-align: center;
+}
+.digital{
+  margin: 0 auto;
+  text-align: center;
+}
+.dark {
+  background-color: #121111;
+}
+.a {
+  max-width: 300px;
+}
+.light {
+  background-color: #F9F9F9;
+  color: #121111;
+}
+.vision {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  padding: 20vh 0;
+}
+.vision i {
+  text-align: center;
+}
+.us h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+.us p {
+  max-width: 20vw;
+  font-size: 0.8rem;
+}
+.copyright {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 auto;
+}
+/*small screen*/
+@media (max-width:750px) {
+  .showcase::after{
+    height:60vh;
+  }
+  .content{
+    top: 10%;
+  }
+  .text {
+    display: none;
+  }
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .vision {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .us p {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
+/*wide screen*/
+
+@media (max-height:350px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .us p {
+    max-width: 300px;
+  }
+  .logo {
+    max-width: 100px;
+  }
+}
